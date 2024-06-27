@@ -19,6 +19,9 @@ def get_server_embeddings(
     response = requests.post(server_address, json=data)
 
     resp_data = response.json()
+
+    # Embeddings returned as concatted torch tensor for convenience,
+    # but these can be returned as a list of desired.
     embeddings = [
         torch.Tensor([resp_data["data"][index]["embedding"]])
         for index in range(len(resp_data["data"]))
@@ -63,4 +66,6 @@ if __name__ == "__main__":
 
     print(f"The total embedding length is {len(embedding)}.")
 
-    print("SERIOUSLY:\nREMEMBER TO END THE RUNPOD INSTANCE ONCE YOU ARE DONE USING IT!!!!")
+    print(
+        "SERIOUSLY:\nREMEMBER TO END THE RUNPOD INSTANCE ONCE YOU ARE DONE USING IT!!!!"
+    )
