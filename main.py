@@ -31,9 +31,8 @@ def get_server_embeddings(
 
 
 if __name__ == "__main__":
-
     # Change this to your RUNPOD instance ID
-    RUNPOD_ID = "3ese5aumi826sg-644113f1"
+    RUNPOD_ID = "bpkw838s9wgwhj-64410a47"
     # You can change this port as well, but make sure to run the infinity
     # server on the same port, and expose that port on the rumpod instance
     RUNPOD_INTERNAL_INF_PORT = 7997
@@ -62,7 +61,7 @@ if __name__ == "__main__":
         embedding = embeddings[index, :]
         input_text = input_texts[index]
 
-        print(f"Text: {input_text}; Embedding: {embedding[:5]}")
+        print(f"Text: {input_text}\nEmbedding: {embedding[:5]}\n")
 
     print(f"The total embedding length is {len(embedding)}.")
 
